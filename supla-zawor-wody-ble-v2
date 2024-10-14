@@ -65,6 +65,7 @@ class MyAdvertisedDeviceCallbacks: public NimBLEAdvertisedDeviceCallbacks {
 
       // Porównanie adresów MAC, ignorując wielkość liter
       if (strcasecmp(advertisedDevice->getAddress().toString().c_str(), allowedMacAddresses[i]) == 0) {
+        Serial.println(allowedMacAddresses[i]);
        // Serial.println("Znaleziono urządzenie BLE z dopuszczonym adresem MAC!");
         bleDeviceFound = true;
         break; // Przerwanie pętli po znalezieniu zgodnego adresu
